@@ -1,6 +1,9 @@
 require_relative 'Board'
 
 class Game
+
+  attr_accessor :board
+  
   def initialize
     @board = Board.new
   end
@@ -16,12 +19,13 @@ class Game
       if input.include?("f")
         @board[input.last].toggle_flag
       else
-        @board[input.last].####
+        @board[input.last]
       end
 
 
     end
   end
+
 
   def get_move
     puts "Please enter your move. Type f before the position to flag or unflag"

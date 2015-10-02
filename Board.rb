@@ -1,4 +1,5 @@
 require_relative 'Tile'
+#require 'byebug'
 
 class Board
   BOARD_SIZE = 9
@@ -20,6 +21,25 @@ class Board
     x, y = pos
     @grid[x][y] = value
   end
+
+  def reveal_white_space(position)
+    neighbors = check_valid_neighbors(position).map{|neighbor| self[neighbor] }
+    neighbors.reject!{ |neighbor| neighbor.state == :revealed || neighbor.value == :M}
+    neighbors.each do |neighbor|
+      neighbor.reveal
+      reveal_white_space(tile_position(neighbor)) unless neighbor.value.is_a?(Integer)
+    end
+    nil
+  end
+
+  def tile_position(tile)
+    @grid.each.with_index do |row, i|
+      row.each.with_index do |cell, j|
+        return [i, j] if cell == tile
+      end
+    end
+  end
+
 
   def place_mines
     mine_count = 0
