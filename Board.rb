@@ -118,9 +118,9 @@ class Board
             tile.value.to_s.colorize(COLORS[tile.value])
           end
         elsif tile.flagged
-          "F".colorize(:green)
+          "\u2691".colorize(:green)
         else
-          "\u2B1C" # find this character
+          "⬜"
         end
       end.join(" ") + "\n"
     end
