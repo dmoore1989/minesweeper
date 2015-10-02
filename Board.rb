@@ -8,6 +8,7 @@ class Board
   def initialize
     @grid = Array.new(BOARD_SIZE) { Array.new(BOARD_SIZE) {Tile.new}}
     place_mines
+    place_numbers
   end
 
   def [](pos)
@@ -31,6 +32,17 @@ class Board
     end
   end
 
+  def place_numbers
+    @grid.each.with_index do |row, i|
+      row.each.with_index do |tile, j|
+        adjacent_mines = count_mines([i, j])
+        unless tile.value == :M || adjacent_mines == 0
+          tile.value =  adjacent_mines #Should this be an int?
+        end
+      end
+    end
+  end
+
   def check_valid_neighbors(position)
     moves = MOVES.map do |move|
       [move.first + position.first, move.last + position.last]
@@ -47,5 +59,7 @@ class Board
     end
     counter
   end
+
+
 
 end
