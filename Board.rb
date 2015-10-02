@@ -61,6 +61,7 @@ class Board
   end
 
   def display
+    system("clear")
     display_grid = @grid.map do |row|
       row.map do |tile|
         if tile.state == :revealed
@@ -71,7 +72,6 @@ class Board
           end
         else
           "\u2B1C"
-
         end
       end.join(" ") + "\n"
     end
