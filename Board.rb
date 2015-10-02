@@ -1,3 +1,6 @@
+# coding: utf-8
+
+require 'colorize'
 require_relative 'Tile'
 # require 'byebug'
 
@@ -5,6 +8,17 @@ class Board
   BOARD_SIZE = 9
   MINES = 10
   MOVES =[[1,0], [1,1], [0,1], [-1,0], [-1,-1], [0,-1], [1,-1], [-1,1]]
+  COLORS = {
+    :M => :red,
+    1 => :blue,
+    2 => :yellow,
+    3 => :cyan,
+    4 => :magenta,
+    5 => :magenta,
+    6 => :magenta,
+    7 => :magenta,
+    8 => :magenta
+  }
 
   def initialize
     @grid = Array.new(BOARD_SIZE) { Array.new(BOARD_SIZE) {Tile.new}}
@@ -29,6 +43,7 @@ class Board
         counter += 1 if tile.state == :hidden
       end
     end
+
     counter
   end
 
@@ -100,12 +115,12 @@ class Board
           if tile.value.nil?
             " "
           else
-            tile.value
+            tile.value.to_s.colorize(COLORS[tile.value])
           end
         elsif tile.flagged
-          "F"
+          "F".colorize(:green)
         else
-          "\u2B1C"
+          "\u2B1C" # find this character
         end
       end.join(" ") + "\n"
     end

@@ -55,7 +55,7 @@ class Game
 
   def get_move
     puts "Please enter your move. Type f before the position to flag or unflag"
-    move = gets.chomp
+    move = gets.chomp.downcase
     move.scan("f") << move.scan(/\d/)[0, 2].map(&:to_i)
   end
 
