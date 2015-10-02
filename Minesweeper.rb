@@ -44,11 +44,9 @@ class Game
   def take_move(position)
 
     if self.board[position].value == :M
-    end
+      @game_state = :lose
+    else
 
-
-
-    if self[position].nil?
       reveal_white_space(position)
     end
   end
@@ -62,10 +60,9 @@ class Game
 
   def valid_move?(input)
     input.uniq!
-    if input.length == 2
-      input.last.length == 2
-    else
-      input.last.length == 2
-    end
+
+
+    input.last.length == 2 && @board[input.last].state == :hidden
+
   end
 end
