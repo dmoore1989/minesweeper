@@ -1,5 +1,5 @@
 class Tile
-  attr_accessor :value, :flagged
+  attr_accessor :value, :flagged, :state
 
   def initialize
     @value = nil

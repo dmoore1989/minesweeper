@@ -60,6 +60,26 @@ class Board
     counter
   end
 
+  def display
+    display_grid = @grid.map do |row|
+      row.map do |tile|
+        if tile.state == :revealed
+          tile.value.to_s
+        else
+          " "
+        end
+      end
+    end
+    puts display_grid
+  end
 
+
+  def reveal_all
+    @grid.each do |row|
+      row.each do |tile|
+        tile.reveal
+      end
+    end
+  end
 
 end
