@@ -1,4 +1,5 @@
 require_relative 'Board'
+require 'byebug'
 
 class Game
 
@@ -21,7 +22,7 @@ class Game
       if input.include?("f")
         @board[input.last].toggle_flag
       else
-        take_move[input.last]
+        take_move(input.last)
       end
 
       @gane_state = :win if @board.hidden_count == Board::MINES
@@ -47,7 +48,7 @@ class Game
       @game_state = :lose
     else
       @board[position].reveal
-      reveal_white_space(position)
+      @board.reveal_white_space(position)
     end
   end
 
@@ -55,11 +56,13 @@ class Game
   def get_move
     puts "Please enter your move. Type f before the position to flag or unflag"
     move = gets.chomp
-    move.scan("f") + move.scan(/\d/)[0, 2].map(&:to_i).to_a
+    move.scan("f") << move.scan(/\d/)[0, 2].map(&:to_i)
   end
 
   def valid_move?(input)
+    # byebug
     input.uniq!
+    return false if input.last.length != 2
     return false if input.first != "f" && @board[input.last].flagged
 
     input.last.length == 2 && @board[input.last].state == :hidden

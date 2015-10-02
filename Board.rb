@@ -1,5 +1,5 @@
 require_relative 'Tile'
-#require 'byebug'
+# require 'byebug'
 
 class Board
   BOARD_SIZE = 9
@@ -34,10 +34,12 @@ class Board
 
   def reveal_white_space(position)
     neighbors = check_valid_neighbors(position).map{|neighbor| self[neighbor] }
-    neighbors.reject!{ |neighbor| neighbor.state == :revealed}
+    neighbors.reject!{ |neighbor| neighbor.state == :revealed || neighbor.value == :M}
     neighbors.each do |neighbor|
       neighbor.reveal unless neighbor.flagged
-      reveal_white_space(tile_position(neighbor)) unless neighbor.value.is_a?(Integer)
+      unless neighbor.value.is_a?(Integer)
+        reveal_white_space(tile_position(neighbor))
+      end
     end
     nil
   end
