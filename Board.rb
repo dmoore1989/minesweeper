@@ -22,11 +22,21 @@ class Board
     @grid[x][y] = value
   end
 
+  def hidden_count
+    counter = 0
+    @grid.each do |row|
+      row.each do |tile|
+        counter += 1 if tile.state == :hidden
+      end
+    end
+    counter
+  end
+
   def reveal_white_space(position)
     neighbors = check_valid_neighbors(position).map{|neighbor| self[neighbor] }
-    neighbors.reject!{ |neighbor| neighbor.state == :revealed || neighbor.value == :M}
+    neighbors.reject!{ |neighbor| neighbor.state == :revealed}
     neighbors.each do |neighbor|
-      neighbor.reveal
+      neighbor.reveal unless neighbor.flagged
       reveal_white_space(tile_position(neighbor)) unless neighbor.value.is_a?(Integer)
     end
     nil

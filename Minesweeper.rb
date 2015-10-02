@@ -3,13 +3,15 @@ require_relative 'Board'
 class Game
 
   attr_accessor :board
-  
+
   def initialize
     @board = Board.new
+    @game_state = nil
   end
 
   def play
-    until over?
+    until @game_state
+      @board.display
       input = get_move
       until valid_move?(input)
         puts "Invalid move, please retry."
@@ -19,10 +21,35 @@ class Game
       if input.include?("f")
         @board[input.last].toggle_flag
       else
-        @board[input.last]
+        take_move[input.last]
       end
 
+      @gane_state = :win if @board.hidden_count == Board::MINES
 
+    end
+
+    if @game_state == :win
+      @board.reveal_all
+      @board.display
+      puts "You Win!!!!"
+    else
+      @board.reveal_all
+      @board.display
+      puts "You Lose"
+    end
+
+
+  end
+
+  def take_move(position)
+
+    if self.board[position].value == :M
+    end
+
+
+
+    if self[position].nil?
+      reveal_white_space(position)
     end
   end
 
