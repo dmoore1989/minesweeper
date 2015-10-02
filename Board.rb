@@ -64,11 +64,16 @@ class Board
     display_grid = @grid.map do |row|
       row.map do |tile|
         if tile.state == :revealed
-          tile.value.to_s
+          if tile.value.nil?
+            " "
+          else
+            tile.value
+          end
         else
-          " "
+          "\u2B1C"
+
         end
-      end
+      end.join(" ") + "\n"
     end
     puts display_grid
   end
