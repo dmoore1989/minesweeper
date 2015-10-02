@@ -1,0 +1,328 @@
+--- !ruby/object:Game
+board: !ruby/object:Board
+  grid:
+  - - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+  - - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+  - - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+  - - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 3
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 3
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+  - - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+  - - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 3
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :revealed
+  - - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :revealed
+  - - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 1
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :revealed
+  - - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: :M
+      flagged: false
+      state: :hidden
+    - !ruby/object:Tile
+      value: 2
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :revealed
+    - !ruby/object:Tile
+      value: 
+      flagged: false
+      state: :revealed
+game_state: 
