@@ -5,20 +5,26 @@ class Game
     @board = Board.new
   end
 
-  # def play
-  #   until over?
-  #     until valid_move?
-  #       get_play
-  #     end
-  #
-  #   end
-  # end
+  def play
+    until over?
+      input = get_move
+      until valid_move?(input)
+        puts "Invalid move, please retry."
+        input = get_move
+      end
 
-  def get_move
-
+    end
   end
 
-  def valid_move?
+  def get_move
+    puts "Please enter your move. Type f before the position to flag"
+    move = gets.chomp
+    move.scan("f") + move.scan(/\d/)[0, 2].map(&:to_i)
+  end
+
+  def valid_move?(input)
+
+
 
   end
 end
