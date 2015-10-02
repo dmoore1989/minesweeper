@@ -102,6 +102,8 @@ class Board
           else
             tile.value
           end
+        elsif tile.flagged
+          "F"
         else
           "\u2B1C"
         end
