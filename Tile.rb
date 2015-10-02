@@ -11,5 +11,8 @@ class Tile
     @state = :revealed
   end
 
+  def toggle_flag
+    @flagged = (@flagged ? false : true)
+  end
 
 end
