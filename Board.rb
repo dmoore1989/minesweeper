@@ -10,6 +10,16 @@ class Board
     place_mines
   end
 
+  def [](pos)
+    x, y = pos
+    @grid[x][y]
+  end
+
+  def []=(pos, value)
+    x, y = pos
+    @grid[x][y] = value
+  end
+
   def place_mines
     mine_count = 0
     until mine_count == MINES
@@ -26,6 +36,16 @@ class Board
       [move.first + position.first, move.last + position.last]
     end
     moves.select{ |move| move.all? { |pos| pos.between?(0, BOARD_SIZE - 1) }}
+  end
+
+  def count_mines(position)
+    valid_moves = check_valid_neighbors(position)
+    counter = 0
+
+    valid_moves.each do |move|
+      counter += 1 if self[move].value == :M
+    end
+    counter
   end
 
 end
