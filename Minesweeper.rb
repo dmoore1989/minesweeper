@@ -46,7 +46,7 @@ class Game
     if self.board[position].value == :M
       @game_state = :lose
     else
-
+      @board[position].reveal
       reveal_white_space(position)
     end
   end
@@ -60,7 +60,7 @@ class Game
 
   def valid_move?(input)
     input.uniq!
-
+    return false if input.first != "f" && @board[input.last].flagged
 
     input.last.length == 2 && @board[input.last].state == :hidden
 
