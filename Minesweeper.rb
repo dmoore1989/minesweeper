@@ -31,7 +31,7 @@ class Game
         take_move(input.last)
       end
 
-      @gane_state = :win if @board.hidden_count == Board::MINES
+      @game_state = :win if @board.hidden_count == Board::MINES
 
     end
 
